@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MongoFs", "src\MongoFs.fsproj", "{F8901ACB-F567-4EAA-9710-5DDB4C41A09A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MongoFs.Tests", "tests\MongoFs.Tests\MongoFs.Tests.fsproj", "{9F701157-550E-45E9-875E-31A3E2789B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8901ACB-F567-4EAA-9710-5DDB4C41A09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8901ACB-F567-4EAA-9710-5DDB4C41A09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8901ACB-F567-4EAA-9710-5DDB4C41A09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8901ACB-F567-4EAA-9710-5DDB4C41A09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F701157-550E-45E9-875E-31A3E2789B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F701157-550E-45E9-875E-31A3E2789B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F701157-550E-45E9-875E-31A3E2789B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F701157-550E-45E9-875E-31A3E2789B21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

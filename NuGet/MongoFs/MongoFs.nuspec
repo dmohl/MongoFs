@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>MongoFs</id>
+    <version>0.1.0.0</version>
+	<dependencies>
+      <dependency id="mongocsharpdriver" version="1.5" />
+    </dependencies>	
+    <authors>Daniel Mohl</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MongoFs provides a few simple helper functions wrapped around the official Mongo C# client that make it a littler easier to use from F#.</description>
+    <summary>
+	MongoFs provides a few simple helper functions wrapped around the official Mongo C# client that make it a littler easier to use from F#. 
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/dmohl/MongoFs</projectUrl> 
+    <licenseUrl>https://github.com/dmohl/MongoFs/blob/master/MIT.License.txt</licenseUrl>
+	<tags>F# fsharp MongoDB</tags>
+  </metadata>
+  <files>
+	  <file src="Lib\*.*" target="Lib" />
+	  <file src="Tools\*.*" target="tools" />
+  </files>
+</package>
