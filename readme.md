@@ -6,11 +6,45 @@ MongoFs
 Syntax
 =======
 
-You have a few options for using MongoFs:
+You have a few options for using MongoFs. If you wish to use the default local MongoDB connection string, you can do something like this:
 
-	UploadBlob "testcontainer" "testblob" "This is a test" |> ignore
-	DeleteBlob "testcontainer" "testblob"
+	type Person = { 
+		mutable _id : ObjectId 
+		mutable FirstName : string 
+		mutable LastName : string 
+	}
 
+	createLocalMongoServer()
+	|> getMongoDatabase dbName
+	|> getMongoCollection<Person> collectionName
+
+If you wish to define the connection string in a config file, you can use the following as long as the app setting has the name of "MongoDbConnectionString":
+
+	createMongoServer()
+	|> getMongoDatabase dbName
+	|> getMongoCollection<Person> collectionName
+	
+To use a different app setting name, do this:
+
+	createMongoServerWithConfig "YourAppSettingName"
+	|> getMongoDatabase dbName
+	|> getMongoCollection<Person> collectionName
+	
+To specify a different connection string by just passing in a string, do this:
+
+	createMongoServerWithConnString "DesiredConnectionString"
+	|> getMongoDatabase dbName
+	|> getMongoCollection<Person> collectionName
+	
+Once the connection is setup, you can use the rest of the Mongo Driver API. For example:
+
+    { _id = ObjectId.GenerateNewId(); FirstName = "John"; LastName = "Doe" }
+    |> people.Insert |> ignore
+
+    let person = people.FindOne()
+	
+Examples are available in the (integration tests)[https://github.com/dmohl/MongoFs/tree/master/tests/MongoFs.Tests].	
+ 	  
 How To Get It
 =======
 
