@@ -8,7 +8,7 @@ Syntax
 
 You have a few options for using MongoFs. If you wish to use the default local MongoDB connection string, you can do something like this:
 
-        [<CLIMutable>]
+    [<CLIMutable>]
 	type Person = { 
 		_id : ObjectId 
 		FirstName : string 
