@@ -8,10 +8,11 @@ Syntax
 
 You have a few options for using MongoFs. If you wish to use the default local MongoDB connection string, you can do something like this:
 
+        [<CLIMutable>]
 	type Person = { 
-		mutable _id : ObjectId 
-		mutable FirstName : string 
-		mutable LastName : string 
+		_id : ObjectId 
+		FirstName : string 
+		LastName : string 
 	}
 
 	createLocalMongoServer()
