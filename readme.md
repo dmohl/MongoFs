@@ -1,3 +1,5 @@
+The main page for MongoFs can be found at http://dmohl.github.com/MongoFs/.
+
 MongoFs
 =======
 
