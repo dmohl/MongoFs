@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>MongoFs by dmohl</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>MongoFs</h1>
+        <p>Provides a few simple helper functions around the C# Mongo Driver.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/dmohl/MongoFs" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/dmohl/MongoFs/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/dmohl/MongoFs/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>MongoFs</h1>
+
+<p><strong>MongoFs</strong> provides a few simple helper functions wrapped around the official Mongo C# client that make it a littler easier to use from F#.</p>
+
+<h1>How To Get It</h1>
+
+<p>MongoFs is available on NuGet Gallery as id MongoFs.</p>
+
+<h1>Getting Started</h1>
+
+<p>You have a few options for using MongoFs. If you wish to use the default local MongoDB connection string, you can do something like this:</p>
+
+<pre><code>[&lt;CLIMutable&gt;]
+type Person = { 
+    _id : ObjectId 
+    FirstName : string 
+    LastName : string 
+}
+
+createLocalMongoServer()
+|&gt; getMongoDatabase dbName
+|&gt; getMongoCollection&lt;Person&gt; collectionName
+</code></pre>
+
+<p>If you wish to define the connection string in a config file, you can use the following as long as the app setting has the name of "MongoDbConnectionString":</p>
+
+<pre><code>createMongoServer()
+|&gt; getMongoDatabase dbName
+|&gt; getMongoCollection&lt;Person&gt; collectionName
+</code></pre>
+
+<p>To use a different app setting name, do this:</p>
+
+<pre><code>createMongoServerWithConfig "YourAppSettingName"
+|&gt; getMongoDatabase dbName
+|&gt; getMongoCollection&lt;Person&gt; collectionName
+</code></pre>
+
+<p>To specify a different connection string by just passing in a string, do this:</p>
+
+<pre><code>createMongoServerWithConnString "DesiredConnectionString"
+|&gt; getMongoDatabase dbName
+|&gt; getMongoCollection&lt;Person&gt; collectionName
+</code></pre>
+
+<p>Once the connection is setup, you can use the rest of the Mongo Driver API. For example:</p>
+
+<pre><code>{ _id = ObjectId.GenerateNewId(); FirstName = "John"; LastName = "Doe" }
+|&gt; people.Insert |&gt; ignore
+
+let person = people.FindOne()
+</code></pre>
+
+<p>Examples are available in the (integration tests)[<a href="https://github.com/dmohl/MongoFs/tree/master/tests/MongoFs.Tests">https://github.com/dmohl/MongoFs/tree/master/tests/MongoFs.Tests</a>].    </p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/dmohl">dmohl</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
